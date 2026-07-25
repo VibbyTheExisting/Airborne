@@ -1,8 +1,8 @@
 import { PLAYER_H, TILE } from "./constants";
+import { buildLevel1, buildLevel2, buildLevel3, buildLevel4, buildLevel5 } from "./HandLevels";
 import {
   Level,
   Tile,
-  buildTutorialLevel,
   type CheckpointDef,
   type EmberDef,
   type EnemyDef,
@@ -658,8 +658,17 @@ export function generateVerticalLevel(rng: Rng, difficulty: number): { level: Le
 // Top-level dispatcher.
 // ---------------------------------------------------------------------------
 
+const HAND_LEVELS: Record<number, () => { level: Level; data: LevelData }> = {
+  1: buildLevel1,
+  2: buildLevel2,
+  3: buildLevel3,
+  4: buildLevel4,
+  5: buildLevel5,
+};
+
 export function getLevelForNumber(levelNumber: number, runSeed: number): { level: Level; data: LevelData } {
-  if (levelNumber <= 1) return buildTutorialLevel();
+  if (levelNumber <= 1) return buildLevel1();
+  if (levelNumber <= 5) return HAND_LEVELS[levelNumber]();
 
   const rng = createRng(hashSeed(runSeed, levelNumber));
   const difficulty = levelNumber - 1;
