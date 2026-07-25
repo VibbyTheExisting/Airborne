@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airborne</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game" width="960" height="540"></canvas>
+      <div id="hud">
+        <button id="hud-level" class="hud-pill hud-pill-btn" title="Select a level">Lv <span id="level-num">1</span></button>
+        <div id="hud-embers" class="hud-pill">✦ <span id="ember-count">0</span> / <span id="ember-total">0</span></div>
+        <div id="hud-deaths" class="hud-pill">☠ <span id="death-count">0</span></div>
+        <div id="hud-timer" class="hud-pill">⏱ <span id="timer">0.0</span>s</div>
+      </div>
+      <div id="overlay">
+        <div id="overlay-card">
+          <h1 id="overlay-title">Airborne</h1>
+          <p id="overlay-sub">Reach the beacon. Collect the embers. Don't look down.</p>
+          <div id="overlay-controls">
+            <div><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd> move</div>
+            <div><kbd>Space</kbd> / <kbd>W</kbd> / <kbd>↑</kbd> jump (double jump in air) -- hold it down for a higher jump</div>
+            <div><kbd>Shift</kbd> dash</div>
+            <div>Hold toward a wall in the air to slide down it slowly</div>
+            <div>Hold <kbd>E</kbd> / <kbd>F</kbd> near an octagon anchor to swing; let go to launch off</div>
+            <div>While swinging, hold <kbd>S</kbd> / <kbd>↓</kbd> then release <kbd>E</kbd>/<kbd>F</kbd> to slingshot away from the anchor</div>
+            <div><kbd>R</kbd> restart</div>
+          </div>
+          <div id="overlay-buttons">
+            <button id="start-btn">Begin</button>
+            <button id="level-select-open-btn" class="secondary-btn">Select Level</button>
+          </div>
+        </div>
+      </div>
+      <div id="level-select" class="hidden">
+        <div id="level-select-card">
+          <h2>Select a Level</h2>
+          <div id="level-grid"></div>
+          <button id="level-select-close-btn">Back</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
