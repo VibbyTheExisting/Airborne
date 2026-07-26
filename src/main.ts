@@ -13,7 +13,7 @@ const game = new Game(canvas);
 const levelRouteMatch = window.location.pathname.match(/\/levels\/(\d+)/);
 if (levelRouteMatch) {
   const levelNumber = Number(levelRouteMatch[1]);
-  if (levelNumber >= 1) game.selectLevel(levelNumber);
+  if (levelNumber >= 1 && levelNumber <= 1000) game.selectLevel(levelNumber);
 }
 
 // A clicked <button> keeps browser focus even after it's hidden (opacity/pointer-events
