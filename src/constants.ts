@@ -19,7 +19,7 @@ export const DASH_SPEED = 620;
 export const DASH_TIME = 0.16;
 export const DASH_COOLDOWN = 0.45;
 
-export const WHIP_RANGE = 150;
+export const WHIP_RANGE = 250;
 export const WHIP_MIN_LENGTH = 28;
 export const SWING_GRAVITY_SCALE = 0.85;
 export const SWING_RELEASE_BOOST = 140;
