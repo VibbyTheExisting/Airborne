@@ -3,7 +3,7 @@ export const TILE = 24;
 export const GRAVITY = 1300;
 export const MAX_FALL_SPEED = 760;
 export const MOVE_ACCEL = 900;
-export const MOVE_DECEL = 4200;
+export const MOVE_DECEL = 1000;
 export const MAX_MOVE_SPEED = 220;
 export const AIR_CONTROL = 0.75;
 
